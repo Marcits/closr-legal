@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad | Closr</title>
+  <meta name="description" content="Política de Privacidad oficial de la aplicación Closr (com.closr). Arquitectura Zero-GPS, sin rastreo de ubicación y cumplimiento de Google Play." />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #000000;
+      --surface: #0E0E0E;
+      --surface-elevated: #141414;
+      --border: #222222;
+      --text-primary: #FFFFFF;
+      --text-secondary: #9E9E9E;
+      --text-tertiary: #616161;
+      --badge-bg: #1A1A1A;
+      --badge-border: #2A2A2A;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 60px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .brand-logo {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: #FFFFFF;
+      color: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-name {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    .lang-switcher {
+      display: flex;
+      gap: 4px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 3px;
+      border-radius: 8px;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .lang-btn.active {
+      background: #FFFFFF;
+      color: #000000;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 48px auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      margin-bottom: 40px;
+    }
+
+    .pill-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-secondary);
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.8px;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .lead {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .meta-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 32px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .meta-col {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .meta-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-tertiary);
+      font-weight: 600;
+    }
+
+    .meta-val {
+      font-size: 13px;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: 13.5px;
+      margin-bottom: 14px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    li {
+      font-size: 13px;
+      color: var(--text-secondary);
+      padding-left: 16px;
+      position: relative;
+    }
+
+    li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--text-tertiary);
+    }
+
+    li strong {
+      color: var(--text-primary);
+    }
+
+    .code-tag {
+      font-family: monospace;
+      font-size: 12px;
+      background: #1C1C1C;
+      border: 1px solid #2B2B2B;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #E4E4E7;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin: 16px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    th {
+      background: var(--surface-elevated);
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    td {
+      color: var(--text-secondary);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+      padding-top: 32px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .lang-en {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="brand">
+      <div class="brand-logo">C</div>
+      <span class="brand-name">Closr</span>
+    </a>
+    <div class="lang-switcher">
+      <button class="lang-btn active" id="btn-es" onclick="switchLang('es')">ES</button>
+      <button class="lang-btn" id="btn-en" onclick="switchLang('en')">EN</button>
+    </div>
+  </header>
+
+  <!-- CONTENIDO EN ESPAÑOL -->
+  <div class="container lang-es" id="content-es">
+    <div class="hero">
+      <span class="pill-tag">Zero-GPS • Privacidad por Diseño</span>
+      <h1>Política de Privacidad</h1>
+      <p class="lead">Esta política describe de forma transparente cómo Closr trata y protege la información de sus usuarios sin recurrir a geolocalización satelital ni rastreo publicitario.</p>
+    </div>
+
+    <!-- DATOS DE LA APLICACIÓN -->
+    <div class="meta-card">
+      <div class="meta-col">
+        <span class="meta-label">Aplicación</span>
+        <span class="meta-val">Closr (com.closr)</span>
+      </div>
+      <div class="meta-col">
+        <span class="meta-label">Desarrollo</span>
+        <span class="meta-val">Closr Team (Independiente)</span>
+      </div>
+      <div class="meta-col">
+        <span class="meta-label">Contacto Privacidad</span>
+        <span class="meta-val">closr.app.team@gmail.com</span>
+      </div>
+      <div class="meta-col">
+        <span class="meta-label">Última actualización</span>
+        <span class="meta-val">Septiembre 2026</span>
+      </div>
+    </div>
+
+    <!-- 1. PRINCIPIO ZERO-GPS -->
+    <div class="card">
+      <h2>1. Arquitectura Zero-GPS y Privacidad por Diseño</h2>
+      <p>Closr ha sido diseñada desde su origen bajo el principio de <strong>no geolocalización</strong>:</p>
+      <ul>
+        <li>La aplicación <strong>no accede, no recopila, no guarda ni transmite coordenadas GPS</strong> de latitud ni longitud.</li>
+        <li>El descubrimiento de otros usuarios se realiza mediante <strong>radiofrecuencia de proximidad física Bluetooth Low Energy (BLE)</strong> con identificadores rotativos efímeros. Ningún usuario ni el servidor pueden trazar rutas ni ubicaciones geográficas.</li>
+      </ul>
+    </div>
+
+    <!-- 2. DATOS RECOPILADOS -->
+    <div class="card">
+      <h2>2. Datos que recopilamos y finalidad</h2>
+      <p>Solo se tratan los datos que el usuario proporciona voluntariamente para el uso de la red social:</p>
+      
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Dato</th>
+              <th>Finalidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Perfil público</strong></td>
+              <td>Nombre o seudónimo, biografía corta, intereses y configuración estética para mostrarte a personas cercanas.</td>
+            </tr>
+            <tr>
+              <td><strong>Fotografías</strong></td>
+              <td>Avatar, banner de presentación y recuerdos del corcho seleccionados con el selector nativo (Photo Picker) y comprimidos en WebP.</td>
+            </tr>
+            <tr>
+              <td><strong>Tokens Bluetooth</strong></td>
+              <td>Hashes rotativos temporales para emitir y detectar presencia física sin exponer tu identidad real al exterior.</td>
+            </tr>
+            <tr>
+              <td><strong>Amistades y Chats</strong></td>
+              <td>Lista de amigos mutuos y mensajes directos entre usuarios que han consentido la conexión.</td>
+            </tr>
+            <tr>
+              <td><strong>Registros de seguridad</strong></td>
+              <td>Bloqueos y reportes de contenido para mantener la comunidad libre de acoso y conductas ilícitas.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 3. PERMISOS DEL DISPOSITIVO -->
+    <div class="card">
+      <h2>3. Permisos solicitados en Android</h2>
+      <ul>
+        <li><span class="code-tag">BLUETOOTH_SCAN / ADVERTISE / CONNECT</span>: Con el modificador <span class="code-tag">neverForLocation</span> en Android 12+, declarando formalmente que el Bluetooth no se utiliza para determinar ubicación geográfica.</li>
+        <li><span class="code-tag">FOREGROUND_SERVICE_CONNECTED_DEVICE</span>: Mantiene la detección por radiofrecuencia mientras el Radar está encendido, mostrando una notificación visible obligatoria.</li>
+        <li><span class="code-tag">POST_NOTIFICATIONS</span>: Notifica solicitudes de amistad y el estado activo del radar.</li>
+      </ul>
+    </div>
+
+    <!-- 4. INFRAESTRUCTURA Y TERCEROS -->
+    <div class="card">
+      <h2>4. Proveedores tecnológicos y cesión de datos</h2>
+      <p>Closr <strong>no vende, no comercializa ni comparte</strong> tus datos con corredores de datos (data brokers) ni redes de publicidad.</p>
+      <ul>
+        <li><strong>Google Firebase:</strong> Empleamos servicios de base de datos segura (Cloud Firestore) y autenticación (Firebase Auth) de Google Cloud, con todas las comunicaciones cifradas mediante HTTPS / TLS 1.3.</li>
+      </ul>
+    </div>
+
+    <!-- 5. SEGURIDAD Y MODERACIÓN -->
+    <div class="card">
+      <h2>5. Moderación de contenidos y seguridad comunitaria</h2>
+      <ul>
+        <li><strong>Tolerancia cero:</strong> Se prohíbe terminantemente el acoso, la incitación al odio, la violencia, la pornografía y el material de abuso sexual infantil (CSAM).</li>
+        <li><strong>Bloqueo y reporte:</strong> Cada perfil dispone de opciones de bloqueo instantáneo y denuncia de contenido, revisadas en menos de 24 horas laborables.</li>
+      </ul>
+    </div>
+
+    <!-- 6. DERECHOS Y ELIMINACIÓN -->
+    <div class="card">
+      <h2>6. Tus derechos y eliminación de datos</h2>
+      <p>Puedes eliminar tu cuenta y todos tus datos en cualquier momento:</p>
+      <ul>
+        <li><strong>Desde la aplicación:</strong> Entrando a <em>Perfil &gt; Ajustes &gt; Eliminar Cuenta</em> (borrado instantáneo).</li>
+        <li><strong>Desde la web:</strong> A través de nuestro <a href="delete-account.html" style="color:#FFF; text-decoration:underline;">formulario web de eliminación de cuenta</a>.</li>
+      </ul>
+    </div>
+
+    <!-- 7. CONTACTO -->
+    <div class="card">
+      <h2>7. Contacto</h2>
+      <p>Para consultas o solicitudes relacionadas con tu privacidad, puedes escribir a: <span style="color:#FFF;">closr.app.team@gmail.com</span></p>
+    </div>
+  </div>
+
+  <!-- CONTENIDO EN INGLÉS -->
+  <div class="container lang-en" id="content-en">
+    <div class="hero">
+      <span class="pill-tag">Zero-GPS • Privacy by Design</span>
+      <h1>Privacy Policy</h1>
+      <p class="lead">This policy outlines how Closr manages and protects user information without GPS tracking or commercial ad profiling.</p>
+    </div>
+
+    <div class="meta-card">
+      <div class="meta-col">
+        <span class="meta-label">Application</span>
+        <span class="meta-val">Closr (com.closr)</span>
+      </div>
+      <div class="meta-col">
+        <span class="meta-label">Developer</span>
+        <span class="meta-val">Closr Team (Independent)</span>
+      </div>
+      <div class="meta-col">
+        <span class="meta-label">Privacy Contact</span>
+        <span class="meta-val">closr.app.team@gmail.com</span>
+      </div>
+      <div class="meta-col">
+        <span class="meta-label">Last Updated</span>
+        <span class="meta-val">September 2026</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>1. Zero-GPS Architecture</h2>
+      <ul>
+        <li>Closr <strong>does not access, collect, store, or share GPS coordinates</strong>.</li>
+        <li>Discovery operates entirely through physical <strong>Bluetooth Low Energy (BLE)</strong> proximity signals with rotating ephemeral tokens. Geographic tracking is technically impossible.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>2. Data We Collect</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Public profile</strong></td>
+              <td>Name/handle, bio, visual styling, and interests shown to nearby users.</td>
+            </tr>
+            <tr>
+              <td><strong>Photos</strong></td>
+              <td>Avatar, banner, and corkboard memories chosen via Android Photo Picker and stored in WebP.</td>
+            </tr>
+            <tr>
+              <td><strong>Bluetooth tokens</strong></td>
+              <td>Temporary cryptographic hashes for local device discovery.</td>
+            </tr>
+            <tr>
+              <td><strong>Friends & Chats</strong></td>
+              <td>Mutual friends graph and direct messaging between consented connections.</td>
+            </tr>
+            <tr>
+              <td><strong>Safety records</strong></td>
+              <td>Blocklists and abuse reports to maintain a secure environment.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>3. Android Permissions</h2>
+      <ul>
+        <li><span class="code-tag">BLUETOOTH_SCAN / ADVERTISE / CONNECT</span>: Declared with <span class="code-tag">neverForLocation</span> on Android 12+, certifying that Bluetooth is not used for geo-tracking.</li>
+        <li><span class="code-tag">FOREGROUND_SERVICE_CONNECTED_DEVICE</span>: Keeps proximity radar active with an ongoing system notification.</li>
+        <li><span class="code-tag">POST_NOTIFICATIONS</span>: System notifications for active radar and friend requests.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>4. Third-Party Services</h2>
+      <p>We <strong>do not sell or rent</strong> personal data to third parties, data brokers, or advertising networks.</p>
+      <ul>
+        <li><strong>Google Firebase:</strong> Cloud Firestore and Firebase Authentication with end-to-end HTTPS/TLS 1.3 encryption.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>5. Safety & Moderation (UGC)</h2>
+      <ul>
+        <li><strong>Zero tolerance:</strong> Harassment, hate speech, violence, nudity, and child exploitation (CSAM) result in immediate termination.</li>
+        <li><strong>Blocking & Reporting:</strong> Built-in instant user blocking and content reporting with 24-hour review.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>6. User Rights & Account Deletion</h2>
+      <ul>
+        <li><strong>In-App:</strong> Tap <em>Profile &gt; Settings &gt; Delete Account</em> for instant permanent removal.</li>
+        <li><strong>Web:</strong> Use our <a href="delete-account.html" style="color:#FFF; text-decoration:underline;">Account Deletion Portal</a>.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>7. Contact</h2>
+      <p>For any privacy inquiries: <span style="color:#FFF;">closr.app.team@gmail.com</span></p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="privacy.html">Política de Privacidad</a>
+      <a href="delete-account.html">Eliminación de Cuenta</a>
+    </div>
+    <p>© 2026 Closr. Arquitectura de proximidad Zero-GPS.</p>
+  </footer>
+
+  <script>
+    function switchLang(lang) {
+      document.getElementById('content-es').style.display = lang === 'es' ? 'block' : 'none';
+      document.getElementById('content-en').style.display = lang === 'en' ? 'block' : 'none';
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+  </script>
+</body>
+</html>

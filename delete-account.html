@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eliminación de Cuenta y Datos | Closr</title>
+  <meta name="description" content="Página oficial de solicitud de eliminación de cuenta y supresión de datos de la aplicación Closr (com.closr). Cumplimiento de directivas de Google Play." />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #000000;
+      --surface: #0E0E0E;
+      --surface-elevated: #141414;
+      --border: #222222;
+      --border-focus: #444444;
+      --text-primary: #FFFFFF;
+      --text-secondary: #9E9E9E;
+      --text-tertiary: #616161;
+      --btn-bg: #FFFFFF;
+      --btn-text: #000000;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 60px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .brand-logo {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: #FFFFFF;
+      color: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-name {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    .lang-switcher {
+      display: flex;
+      gap: 4px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 3px;
+      border-radius: 8px;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .lang-btn.active {
+      background: #FFFFFF;
+      color: #000000;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 40px 20px 0 20px;
+    }
+
+    .hero {
+      margin-bottom: 32px;
+    }
+
+    .pill-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: #181818;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    .lead {
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* METADATOS APP */
+    .meta-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .meta-col {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .meta-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-tertiary);
+      font-weight: 600;
+    }
+
+    .meta-val {
+      font-size: 13px;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    /* SECCIONES */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: 13.5px;
+      margin-bottom: 16px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* PASOS EN LA APP */
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .step-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      padding: 14px 16px;
+      border-radius: 10px;
+    }
+
+    .step-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      color: #000000;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .step-desc strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* CAJA DE CONTACTO DIRECTO (SIN APP) */
+    .contact-box {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      margin-top: 16px;
+    }
+
+    .contact-email-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: #000000;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .email-badge {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .email-badge-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-tertiary);
+      font-weight: 600;
+    }
+
+    .email-badge-address {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #FFFFFF;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      letter-spacing: 0.2px;
+    }
+
+    .btn-copy {
+      background: #1A1A1A;
+      color: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 14px;
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .btn-copy:hover {
+      background: #252525;
+      border-color: var(--border-focus);
+    }
+
+    .instructions-card {
+      margin-bottom: 20px;
+    }
+
+    .instructions-card h3 {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-tertiary);
+      margin-bottom: 10px;
+    }
+
+    .instructions-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .instructions-card li {
+      font-size: 13px;
+      color: var(--text-secondary);
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .instructions-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--text-primary);
+    }
+
+    .instructions-card strong {
+      color: #FFFFFF;
+    }
+
+    .quick-actions {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-action-primary {
+      background: #FFFFFF;
+      color: #000000;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity 0.15s ease;
+    }
+
+    .btn-action-primary:hover {
+      opacity: 0.88;
+    }
+
+    .btn-action-secondary {
+      background: #141414;
+      color: #FFFFFF;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.15s ease;
+    }
+
+    .btn-action-secondary:hover {
+      background: #202020;
+    }
+
+    .sla-text {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .sla-text strong {
+      color: var(--text-secondary);
+    }
+
+    /* GRID DE QUÉ SE BORRA Y RETIENE */
+    .scope-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .scope-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .scope-col {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .scope-col h3 {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    .scope-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .scope-col li {
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .scope-col li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--text-tertiary);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+      padding-top: 32px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .lang-en {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="brand">
+      <div class="brand-logo">C</div>
+      <span class="brand-name">Closr</span>
+    </a>
+    <div class="lang-switcher">
+      <button class="lang-btn active" id="btn-es" onclick="switchLang('es')">ES</button>
+      <button class="lang-btn" id="btn-en" onclick="switchLang('en')">EN</button>
+    </div>
+  </header>
+
+  <!-- CONTENIDO EN ESPAÑOL -->
+  <div class="container lang-es" id="content-es">
+    <div class="hero">
+      <span class="pill-tag">Google Play • Eliminación de Datos</span>
+      <h1>Eliminación de Cuenta y Datos</h1>
+      <p class="lead">Proceso oficial para solicitar la supresión completa de tu cuenta, perfil e información personal en la aplicación Closr.</p>
+    </div>
+
+    <!-- DATOS DE LA APLICACIÓN -->
+    <div class="meta-card">
+      <div class="meta-col">
+        <span class="meta-label">Aplicación</span>
+        <span class="meta-val">Closr (com.closr)</span>
+      </div>
+      <div class="meta-col">
+        <span class="meta-label">Desarrollo</span>
+        <span class="meta-val">Closr Team (Independiente)</span>
+      </div>
+      <div class="meta-col">
+        <span class="meta-label">Contacto Privacidad</span>
+        <span class="meta-val">closr.app.team@gmail.com</span>
+      </div>
+    </div>
+
+    <!-- OPCIÓN 1: DESDE LA APP -->
+    <div class="card">
+      <h2>1. Eliminación directa desde la app (Instantánea)</h2>
+      <p>Si tienes la aplicación instalada en tu dispositivo Android, puedes eliminar tu cuenta en cualquier momento sin esperas ni validaciones manuales:</p>
+
+      <div class="step-list">
+        <div class="step-row">
+          <div class="step-circle">1</div>
+          <div class="step-desc">
+            <strong>Accede a tu Perfil:</strong> Abre Closr y pulsa en la pestaña de perfil (esquina inferior derecha).
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-circle">2</div>
+          <div class="step-desc">
+            <strong>Ajustes de Cuenta:</strong> Pulsa en el icono de engranaje (Ajustes) en la cabecera.
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-circle">3</div>
+          <div class="step-desc">
+            <strong>Privacidad &gt; Eliminar Cuenta:</strong> Baja hasta el final de la pantalla y pulsa el botón "Eliminar Cuenta".
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-circle">4</div>
+          <div class="step-desc">
+            <strong>Confirmación:</strong> Confirma la acción. Tu perfil, fotografías y credenciales se borran inmediatamente de forma definitiva.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPCIÓN 2: POR CORREO (SIN LA APP) -->
+    <div class="card">
+      <h2>2. Solicitud por correo (Si ya no tienes la app)</h2>
+      <p>Si has desinstalado la aplicación o no tienes acceso a tu teléfono, puedes solicitar la eliminación definitiva escribiendo a nuestro equipo de soporte:</p>
+
+      <div class="contact-box">
+        <div class="contact-email-row">
+          <div class="email-badge">
+            <span class="email-badge-label">Correo Oficial de Soporte y Bajas</span>
+            <span class="email-badge-address">closr.app.team@gmail.com</span>
+          </div>
+          <button type="button" class="btn-copy" id="btn-copy-email-es" onclick="copyEmail('es')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span id="copy-email-label-es">Copiar correo</span>
+          </button>
+        </div>
+
+        <div class="instructions-card">
+          <h3>Información a incluir en tu correo:</h3>
+          <ul>
+            <li><strong>Asunto:</strong> Solicitud de baja de cuenta Closr</li>
+            <li><strong>Nombre de usuario:</strong> Tu apodo o nombre en la app.</li>
+            <li><strong>Correo registrado:</strong> La dirección con la que te registraste en Closr.</li>
+          </ul>
+        </div>
+
+        <div class="quick-actions">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=closr.app.team@gmail.com&su=%5BSOLICITUD%20BORRADO%20CUENTA%5D%20Closr&body=Hola%20equipo%20de%20Closr%2C%0A%0ASolicito%20la%20eliminaci%C3%B3n%20definitiva%20de%20mi%20cuenta%20y%20datos%20en%20Closr%3A%0A-%20Nombre%20de%20usuario%3A%20%0A-%20Correo%20registrado%3A%20%0A%0AGracias." target="_blank" class="btn-action-primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <span>Redactar en Gmail</span>
+          </a>
+          <a href="mailto:closr.app.team@gmail.com?subject=[SOLICITUD%20BORRADO%20CUENTA]%20Closr&body=Hola%20equipo%20de%20Closr,%0A%0ASolicito%20la%20eliminaci%C3%B3n%20definitiva%20de%20mi%20cuenta%20y%20datos%20en%20Closr:%0A-%20Nombre%20de%20usuario:%20%0A-%20Correo%20registrado:%20%0A%0AGracias." class="btn-action-secondary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>Abrir en App de Correo</span>
+          </a>
+        </div>
+
+        <p class="sla-text">⏳ Tiempo de respuesta y supresión: <strong>Máximo 48 horas laborables</strong>.</p>
+      </div>
+    </div>
+
+    <!-- ALCANCE DEL BORRADO -->
+    <div class="card">
+      <h2>Detalle del borrado y retención de datos</h2>
+      <p>En cumplimiento con las directivas de seguridad de Google Play y normativas de privacidad:</p>
+
+      <div class="scope-grid">
+        <div class="scope-col">
+          <h3>Datos eliminados permanentemente</h3>
+          <ul>
+            <li>Perfil (nombre, biografía, estilos e intereses).</li>
+            <li>Fotografías (avatar, banner y recuerdos del corcho).</li>
+            <li>Credenciales y registro de autenticación.</li>
+            <li>Amistades, solicitudes e historial de chats.</li>
+            <li>Identificadores efímeros de Bluetooth (BLE).</li>
+          </ul>
+        </div>
+        <div class="scope-col">
+          <h3>Retención obligatoria temporal</h3>
+          <ul>
+            <li>No se almacena ningún dato personal identificativo tras el borrado.</li>
+            <li>En caso de existir reportes de seguridad previos, se conservan únicamente registros disociados (anónimos) hasta 30 días para prevención de fraude y moderación.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENIDO EN INGLÉS -->
+  <div class="container lang-en" id="content-en">
+    <div class="hero">
+      <span class="pill-tag">Google Play • Data Deletion</span>
+      <h1>Account & Data Deletion</h1>
+      <p class="lead">Official procedure to request full deletion of your account, profile, and personal data from the Closr application.</p>
+    </div>
+
+    <div class="meta-card">
+      <div class="meta-col">
+        <span class="meta-label">Application</span>
+        <span class="meta-val">Closr (com.closr)</span>
+      </div>
+      <div class="meta-col">
+        <span class="meta-label">Developer</span>
+        <span class="meta-val">Closr Team (Independent)</span>
+      </div>
+      <div class="meta-col">
+        <span class="meta-label">Privacy Contact</span>
+        <span class="meta-val">closr.app.team@gmail.com</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>1. In-App Deletion (Immediate)</h2>
+      <p>If you have the Closr app installed on your Android device, you can delete your account directly at any time:</p>
+
+      <div class="step-list">
+        <div class="step-row">
+          <div class="step-circle">1</div>
+          <div class="step-desc">
+            <strong>Go to Profile:</strong> Open Closr and tap the Profile tab (bottom right corner).
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-circle">2</div>
+          <div class="step-desc">
+            <strong>Settings:</strong> Tap the gear Settings icon located in the profile header.
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-circle">3</div>
+          <div class="step-desc">
+            <strong>Privacy &gt; Delete Account:</strong> Scroll down to the Privacy section and tap "Delete Account".
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-circle">4</div>
+          <div class="step-desc">
+            <strong>Confirm:</strong> Confirm the action. Your profile, photos, and credentials are permanently purged immediately.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>2. Email Request (Without the app)</h2>
+      <p>If you have uninstalled the app or cannot access your device, you can request permanent deletion by emailing our support team:</p>
+
+      <div class="contact-box">
+        <div class="contact-email-row">
+          <div class="email-badge">
+            <span class="email-badge-label">Official Support & Privacy Email</span>
+            <span class="email-badge-address">closr.app.team@gmail.com</span>
+          </div>
+          <button type="button" class="btn-copy" id="btn-copy-email-en" onclick="copyEmail('en')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span id="copy-email-label-en">Copy Email</span>
+          </button>
+        </div>
+
+        <div class="instructions-card">
+          <h3>Information to include in your email:</h3>
+          <ul>
+            <li><strong>Subject:</strong> Closr Account Deletion Request</li>
+            <li><strong>Username:</strong> Your in-app display name or handle.</li>
+            <li><strong>Registered Email:</strong> The email address linked to your Closr account.</li>
+          </ul>
+        </div>
+
+        <div class="quick-actions">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=closr.app.team@gmail.com&su=%5BACCOUNT%20DELETION%20REQUEST%5D%20Closr&body=Hello%20Closr%20Team%2C%0A%0AI%20request%20the%20permanent%20deletion%20of%20my%20Closr%20account%20and%20data%3A%0A-%20Username%3A%20%0A-%20Registered%20Email%3A%20%0A%0AThank%20you." target="_blank" class="btn-action-primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <span>Compose in Gmail</span>
+          </a>
+          <a href="mailto:closr.app.team@gmail.com?subject=[ACCOUNT%20DELETION%20REQUEST]%20Closr&body=Hello%20Closr%20Team,%0A%0AI%20request%20the%20permanent%20deletion%20of%20my%20Closr%20account%20and%20data:%0A-%20Username:%20%0A-%20Registered%20Email:%20%0A%0AThank%20you." class="btn-action-secondary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>Open in Mail App</span>
+          </a>
+        </div>
+
+        <p class="sla-text">⏳ Response and data purge: <strong>Within 48 business hours</strong>.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Data Deletion & Retention Scope</h2>
+      <p>In full compliance with Google Play Developer Program policies:</p>
+
+      <div class="scope-grid">
+        <div class="scope-col">
+          <h3>Permanently Deleted Data</h3>
+          <ul>
+            <li>Profile (name, bio, visual styling, interests).</li>
+            <li>Photos (avatar, banner, corkboard memories).</li>
+            <li>Authentication records and credentials.</li>
+            <li>Friends lists, requests, and chat histories.</li>
+            <li>Ephemeral Bluetooth Low Energy (BLE) tokens.</li>
+          </ul>
+        </div>
+        <div class="scope-col">
+          <h3>Temporary Retention Policy</h3>
+          <ul>
+            <li>No personal identifying information is stored after deletion.</li>
+            <li>If prior abuse reports existed, anonymized disassociated logs may be retained up to 30 days solely for security and moderation compliance.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="privacy.html">Política de Privacidad</a>
+      <a href="delete-account.html">Eliminación de Cuenta</a>
+    </div>
+    <p>© 2026 Closr. Arquitectura de proximidad Zero-GPS.</p>
+  </footer>
+
+  <script>
+    function switchLang(lang) {
+      document.getElementById('content-es').style.display = lang === 'es' ? 'block' : 'none';
+      document.getElementById('content-en').style.display = lang === 'en' ? 'block' : 'none';
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+
+    function copyEmail(lang) {
+      const email = "closr.app.team@gmail.com";
+      const label = document.getElementById('copy-email-label-' + lang);
+      const originalText = label.textContent;
+
+      const onSuccess = () => {
+        label.textContent = lang === 'es' ? '✓ ¡Copiado!' : '✓ Copied!';
+        setTimeout(() => { label.textContent = originalText; }, 2500);
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(onSuccess).catch(() => {
+          fallbackCopy(email, onSuccess);
+        });
+      } else {
+        fallbackCopy(email, onSuccess);
+      }
+    }
+
+    function fallbackCopy(text, callback) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      callback();
+    }
+  </script>
+</body>
+</html>
